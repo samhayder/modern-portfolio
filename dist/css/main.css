@@ -1,2 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Calligraffitti&family=Mali:ital,wght@0,700;1,300&display=swap");
+/* font-family: 'Calligraffitti', cursive;
+font-family: 'Mali', cursive; */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
+
+/* Template Main Color*/
+/* Transition Effect */
 body {
-  background: #444; }
+  background: #444;
+  color: #ffffff;
+  font-family: "Mali", cursive;
+  height: 100vh;
+  line-height: 1.5; }
+  body#home-bg {
+    background: linear-gradient(to right, rgba(68, 68, 68, 0.7), rgba(68, 68, 68, 0.7)), url("../img/home_bg.jpg") center/cover fixed no-repeat; }
+
+a {
+  text-decoration: none;
+  transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease; }
+  a:hover {
+    text-decoration: none; }
+
+.text-slant {
+  font-family: "Calligraffitti", cursive; }
+
+.text-white {
+  color: #ffffff; }
+
+.text-yellow {
+  color: #eece1a; }
+
+/*------------------------------
+            Header css
+--------------------------------*/
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 2; }
+  header ul li a {
+    color: #ffffff;
+    text-transform: capitalize; }
+    header ul li a:hover {
+      color: #eece1a; }
+
+/*------------------------------
+            Main css
+--------------------------------*/
+main {
+  height: 100%; }
+  main h4 {
+    background: rgba(0, 0, 0, 0.2); }
+  main .social-link a {
+    color: #ffffff; }
+    main .social-link a:hover {
+      color: #eece1a; }
+  main#home {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
+
+/*------------------------------
+            Homepage css
+--------------------------------*/

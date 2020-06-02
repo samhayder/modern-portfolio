@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Calligraffitti&family=Mali:ital,wght@0,700;1,300&display=swap");
+/* font-family: 'Calligraffitti', cursive;
+font-family: 'Mali', cursive; */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+@import 'config';
+
+body {
+  @include background();
+  background: $mainGray;
+  color: $mainWhite;
+  font-family: "Mali", cursive;
+  height: 100vh;
+  line-height: 1.5;
+}
+a {
+  text-decoration: none;
+  @include ease();
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.text-slant {
+  font-family: "Calligraffitti", cursive;
+}
+.text-white {
+  color: $mainWhite;
+}
+.text-yellow {
+  color: $mainYellow;
+}
+
+/*------------------------------
+            Header css
+--------------------------------*/
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+
+  ul {
+    li {
+      a {
+        color: $mainWhite;
+        text-transform: capitalize;
+
+        &:hover {
+          color: $mainYellow;
+        }
+      }
+    }
+  }
+}
+/*------------------------------
+            Main css
+--------------------------------*/
+main {
+  height: 100%;
+
+  h4 {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .social-link {
+    a {
+      color: $mainWhite;
+
+      &:hover {
+        color: $mainYellow;
+      }
+    }
+  }
+
+  &#home {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+/*------------------------------
+            Homepage css
+--------------------------------*/
