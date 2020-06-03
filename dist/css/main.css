@@ -39,10 +39,8 @@ a {
 /*------------------------------
             Header css
 --------------------------------*/
-header {
-  position: fixed;
-  width: 100%;
-  z-index: 2; }
+header ul li {
+  list-style: none; }
   header ul li a {
     color: #ffffff;
     text-transform: capitalize; }
@@ -52,20 +50,185 @@ header {
 /*------------------------------
             Main css
 --------------------------------*/
-main {
-  height: 100%; }
-  main h4 {
-    background: rgba(0, 0, 0, 0.2); }
-  main .social-link a {
-    color: #ffffff; }
-    main .social-link a:hover {
-      color: #eece1a; }
-  main#home {
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center; }
+main h4 {
+  background: rgba(0, 0, 0, 0.2); }
 
+main .social-link a {
+  color: #ffffff; }
+  main .social-link a:hover {
+    color: #eece1a; }
+
+main#home {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+
+/*------------------------------
+            Menu Btn css
+--------------------------------*/
+.menu-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 2rem;
+  cursor: pointer;
+  z-index: 99;
+  transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease; }
+  .menu-btn .bar {
+    background: #ffffff;
+    height: 0.2rem;
+    margin: 0 0 0.5rem 0;
+    z-index: 2; }
+  .menu-btn.close {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg); }
+    .menu-btn.close .bar1 {
+      background: red;
+      transform: rotate(45deg) translate(8px, 7px);
+      -webkit-transform: rotate(45deg) translate(8px, 7px);
+      -moz-transform: rotate(45deg) translate(8px, 7px);
+      -ms-transform: rotate(45deg) translate(8px, 7px);
+      -o-transform: rotate(45deg) translate(8px, 7px); }
+    .menu-btn.close .bar2 {
+      opacity: 0; }
+    .menu-btn.close .bar3 {
+      background: red;
+      transform: rotate(-45deg) translate(8px, -7px);
+      -webkit-transform: rotate(-45deg) translate(8px, -7px);
+      -moz-transform: rotate(-45deg) translate(8px, -7px);
+      -ms-transform: rotate(-45deg) translate(8px, -7px);
+      -o-transform: rotate(-45deg) translate(8px, -7px); }
+
+/*------------------------------
+            Menu css
+--------------------------------*/
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.9;
+  z-index: 44;
+  visibility: hidden; }
+  .menu.show {
+    visibility: visible;
+    z-index: 45; }
+  .menu-branding, .menu-nav {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 50%;
+    float: left;
+    overflow: hidden;
+    z-index: 33; }
+  .menu-branding {
+    background: #444;
+    transform: translate3d(0, 100%, 0);
+    -webkit-transform: translate3d(0, 100%, 0);
+    -moz-transform: translate3d(0, 100%, 0);
+    -ms-transform: translate3d(0, 100%, 0);
+    -o-transform: translate3d(0, 100%, 0);
+    transition: all 1s ease-out;
+    -webkit-transition: all 1s ease-out;
+    -moz-transition: all 1s ease-out;
+    -ms-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out; }
+    .menu-branding.show {
+      transform: translate3d(0, 0, 0);
+      -webkit-transform: translate3d(0, 0, 0);
+      -moz-transform: translate3d(0, 0, 0);
+      -ms-transform: translate3d(0, 0, 0);
+      -o-transform: translate3d(0, 0, 0);
+      transition: all 1s ease-out;
+      -webkit-transition: all 1s ease-out;
+      -moz-transition: all 1s ease-out;
+      -ms-transition: all 1s ease-out;
+      -o-transition: all 1s ease-out; }
+    .menu-branding .portrait {
+      width: 250px;
+      height: 250px;
+      background: url("../img/portrait-img.jpg");
+      margin: 0 auto;
+      border: 5px solid #eece1a;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%; }
+  .menu-nav {
+    background: #373737;
+    margin: 0;
+    padding: 0;
+    transform: translate3d(0, -100%, 0);
+    -webkit-transform: translate3d(0, -100%, 0);
+    -moz-transform: translate3d(0, -100%, 0);
+    -ms-transform: translate3d(0, -100%, 0);
+    -o-transform: translate3d(0, -100%, 0);
+    transition: all 1s ease-out;
+    -webkit-transition: all 1s ease-out;
+    -moz-transition: all 1s ease-out;
+    -ms-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out; }
+    .menu-nav.show {
+      transform: translate3d(0, 0, 0);
+      -webkit-transform: translate3d(0, 0, 0);
+      -moz-transform: translate3d(0, 0, 0);
+      -ms-transform: translate3d(0, 0, 0);
+      -o-transform: translate3d(0, 0, 0);
+      transition: all 1s ease-out;
+      -webkit-transition: all 1s ease-out;
+      -moz-transition: all 1s ease-out;
+      -ms-transition: all 1s ease-out;
+      -o-transition: all 1s ease-out; }
+  .menu .menu-item {
+    transform: translate3d(600px, 0, 0);
+    -webkit-transform: translate3d(600px, 0, 0);
+    -moz-transform: translate3d(600px, 0, 0);
+    -ms-transform: translate3d(600px, 0, 0);
+    -o-transform: translate3d(600px, 0, 0);
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease; }
+    .menu .menu-item.show {
+      transform: translate3d(0, 0, 0);
+      -webkit-transform: translate3d(0, 0, 0);
+      -moz-transform: translate3d(0, 0, 0);
+      -ms-transform: translate3d(0, 0, 0);
+      -o-transform: translate3d(0, 0, 0); }
+  .menu .nav-link {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 1rem 0; }
+
+.menu-item:nth-child(1) {
+  transition-delay: 0.1s; }
+
+.menu-item:nth-child(2) {
+  transition-delay: 0.2s; }
+
+.menu-item:nth-child(3) {
+  transition-delay: 0.3s; }
+
+.menu-item:nth-child(4) {
+  transition-delay: 0.4s; }
+
+/*------------------------------
+            Homepage css
+--------------------------------*/
 /*------------------------------
             Homepage css
 --------------------------------*/
