@@ -1,0 +1,74 @@
+/* Template Main Color*/
+$primaryColor: #444;
+$secondaryColor: #eece1a;
+
+$homepageBgShow: true;
+$homepageBg: url("../img/home_bg.jpg");
+$gradient: linear-gradient(
+  to right,
+  rgba($primaryColor, 0.7),
+  rgba($primaryColor, 0.6)
+);
+//Set Text Color
+@function setTextColor($color) {
+  @if (lightness($color) > 40) {
+    @return #000000;
+  } @else {
+    @return #ffffff;
+  }
+}
+
+/* Transition Effect */
+@mixin ease {
+  transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+}
+@mixin easeOut {
+  transition: all 1s ease-out;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -ms-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+}
+
+@mixin threeD($value1, $value2, $value3) {
+  transform: translate3d($value1, $value2, $value3);
+  -webkit-transform: translate3d($value1, $value2, $value3);
+  -moz-transform: translate3d($value1, $value2, $value3);
+  -ms-transform: translate3d($value1, $value2, $value3);
+  -o-transform: translate3d($value1, $value2, $value3);
+}
+
+//Header background
+@mixin background {
+  @if $homepageBgShow {
+    &#home-bg {
+      background: $gradient, $homepageBg center/cover fixed no-repeat;
+    }
+  }
+}
+
+//Media query
+@mixin mediaSm {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+@mixin mediaMd {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin mediaLg {
+  @media screen and (min-width: 769px) and (max-width: 1170px) {
+    @content;
+  }
+}
+@mixin mediaXl {
+  @media screen and (min-width: 1170px) {
+    @content;
+  }
+}

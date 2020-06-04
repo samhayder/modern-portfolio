@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Calligraffitti&family=Mali:ital,wght@0,700;1,300&display=swap");
+/* font-family: 'Calligraffitti', cursive;
+font-family: 'Mali', cursive; */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+//Improted Global style
+@import "config";
+
+body {
+  @include background();
+  background: $primaryColor;
+  color: setTextColor($primaryColor);
+  font-family: "Mali", cursive;
+  height: 100vh;
+  line-height: 1.5;
+}
+a {
+  text-decoration: none;
+  @include ease();
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.text-slant {
+  font-family: "Calligraffitti", cursive;
+}
+.text-white {
+  color: #fff;
+}
+.text-yellow {
+  color: $secondaryColor;
+}
+
+/*------------------------------
+            Header css
+--------------------------------*/
+header {
+  ul {
+    li {
+      list-style: none;
+      a {
+        color: setTextColor($primaryColor);
+        text-transform: capitalize;
+
+        &:hover {
+          color: $secondaryColor;
+        }
+      }
+    }
+  }
+}
+/*------------------------------
+            Main css
+--------------------------------*/
+main {
+  min-height: calc(100vh - 60px);
+  .title-info {
+    background: rgba($primaryColor, 0.5);
+  }
+
+  .social-link {
+    a {
+      color: setTextColor($primaryColor);
+
+      &:hover {
+        color: $secondaryColor;
+      }
+    }
+  }
+
+  &#home {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/*------------------------------
+            Menu Btn css
+--------------------------------*/
+.menu-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 2rem;
+  cursor: pointer;
+  z-index: 99;
+  @include ease();
+
+  .bar {
+    background: setTextColor($primaryColor);
+    height: 0.2rem;
+    margin: 0 0 0.5rem 0;
+    z-index: 2;
+  }
+
+  &.close {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+
+    .bar1 {
+      background: red;
+      transform: rotate(45deg) translate(8px, 7px);
+      -webkit-transform: rotate(45deg) translate(8px, 7px);
+      -moz-transform: rotate(45deg) translate(8px, 7px);
+      -ms-transform: rotate(45deg) translate(8px, 7px);
+      -o-transform: rotate(45deg) translate(8px, 7px);
+    }
+
+    .bar2 {
+      opacity: 0;
+    }
+
+    .bar3 {
+      background: red;
+      transform: rotate(-45deg) translate(8px, -7px);
+      -webkit-transform: rotate(-45deg) translate(8px, -7px);
+      -moz-transform: rotate(-45deg) translate(8px, -7px);
+      -ms-transform: rotate(-45deg) translate(8px, -7px);
+      -o-transform: rotate(-45deg) translate(8px, -7px);
+    }
+  }
+}
+
+/*------------------------------
+            Menu css
+--------------------------------*/
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.9;
+  z-index: 44;
+  visibility: hidden;
+
+  &.show {
+    visibility: visible;
+    z-index: 45;
+  }
+
+  &-branding,
+  &-nav {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 50%;
+    float: left;
+    overflow: hidden;
+    z-index: 33;
+  }
+
+  &-branding {
+    background: $primaryColor;
+    @include threeD(0, 100%, 0);
+    @include easeOut();
+
+    &.show {
+      @include threeD(0, 0, 0);
+      @include easeOut();
+    }
+
+    .portrait {
+      width: 250px;
+      height: 250px;
+      background: url("../img/portrait-img.jpg");
+      margin: 0 auto;
+      border: 5px solid $secondaryColor;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+    }
+  }
+
+  &-nav {
+    background: darken($primaryColor, 5);
+    margin: 0;
+    padding: 0;
+    @include threeD(0, -100%, 0);
+    @include easeOut();
+
+    &.show {
+      @include threeD(0, 0, 0);
+      @include easeOut();
+    }
+  }
+
+  .menu-item {
+    @include threeD(600px, 0, 0);
+    @include ease();
+
+    &.show {
+      @include threeD(0, 0, 0);
+    }
+  }
+
+  .nav-link {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 1rem 0;
+
+    &.active {
+      color: $secondaryColor;
+    }
+  }
+}
+
+//Delay is nav item 0.1s
+@for $x from 1 through 4 {
+  .menu-item:nth-child(#{$x}) {
+    transition-delay: $x * 0.1s;
+  }
+}
+
+/*------------------------------
+            About page css
+--------------------------------*/
+#about {
+  .about-img {
+    margin: 0 auto;
+    border: 0.1rem solid $secondaryColor;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+
+  .single-job {
+    background: lighten($primaryColor, 5);
+    border-bottom: 0.2rem solid $secondaryColor;
+    padding: 0.4rem;
+  }
+}
+
+/*------------------------------
+            Work page css
+--------------------------------*/
+#work {
+  .single-project {
+    .project-img {
+      width: 100%;
+      height: 350px;
+      border: 0.2rem solid $secondaryColor;
+      @include ease();
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+/*------------------------------
+            Contact page css
+--------------------------------*/
+#contact {
+  .boxed {
+    border: 0.2rem solid #fff;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 1rem;
+    @include easeOut();
+
+    &:hover {
+      background: $secondaryColor;
+      color: $primaryColor;
+      padding: 0.5rem 1.5rem;
+
+      span {
+        color: $primaryColor;
+      }
+    }
+  }
+}
+/*------------------------------
+            Footer css
+--------------------------------*/
+#main-footer {
+  height: 60px;
+  text-align: center;
+  background: darken($primaryColor, 10);
+  padding: 1rem;
+  justify-content: space-evenly;
+}
+/*------------------------------
+            _responsive.scss
+--------------------------------*/
+@import "responsive";

@@ -1,0 +1,384 @@
+@import url("https://fonts.googleapis.com/css2?family=Calligraffitti&family=Mali:ital,wght@0,700;1,300&display=swap");
+/* font-family: 'Calligraffitti', cursive;
+font-family: 'Mali', cursive; */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Template Main Color*/
+/* Transition Effect */
+body {
+  background: #444;
+  color: #ffffff;
+  font-family: "Mali", cursive;
+  height: 100vh;
+  line-height: 1.5;
+}
+body#home-bg {
+  background: linear-gradient(
+      to right,
+      rgba(68, 68, 68, 0.7),
+      rgba(68, 68, 68, 0.6)
+    ),
+    url("../img/home_bg.jpg") center/cover fixed no-repeat;
+}
+
+a {
+  text-decoration: none;
+  transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+}
+a:hover {
+  text-decoration: none;
+}
+
+.text-slant {
+  font-family: "Calligraffitti", cursive;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.text-yellow {
+  color: #eece1a;
+}
+
+/*------------------------------
+            Header css
+--------------------------------*/
+header ul li {
+  list-style: none;
+}
+header ul li a {
+  color: #ffffff;
+  text-transform: capitalize;
+}
+header ul li a:hover {
+  color: #eece1a;
+}
+
+/*------------------------------
+            Main css
+--------------------------------*/
+main {
+  min-height: calc(100vh - 60px);
+}
+main .title-info {
+  background: rgba(68, 68, 68, 0.5);
+}
+main .social-link a {
+  color: #ffffff;
+}
+main .social-link a:hover {
+  color: #eece1a;
+}
+main#home {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/*------------------------------
+            Menu Btn css
+--------------------------------*/
+.menu-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 2rem;
+  cursor: pointer;
+  z-index: 99;
+  transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+}
+.menu-btn .bar {
+  background: #ffffff;
+  height: 0.2rem;
+  margin: 0 0 0.5rem 0;
+  z-index: 2;
+}
+.menu-btn.close {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+.menu-btn.close .bar1 {
+  background: red;
+  transform: rotate(45deg) translate(8px, 7px);
+  -webkit-transform: rotate(45deg) translate(8px, 7px);
+  -moz-transform: rotate(45deg) translate(8px, 7px);
+  -ms-transform: rotate(45deg) translate(8px, 7px);
+  -o-transform: rotate(45deg) translate(8px, 7px);
+}
+.menu-btn.close .bar2 {
+  opacity: 0;
+}
+.menu-btn.close .bar3 {
+  background: red;
+  transform: rotate(-45deg) translate(8px, -7px);
+  -webkit-transform: rotate(-45deg) translate(8px, -7px);
+  -moz-transform: rotate(-45deg) translate(8px, -7px);
+  -ms-transform: rotate(-45deg) translate(8px, -7px);
+  -o-transform: rotate(-45deg) translate(8px, -7px);
+}
+
+/*------------------------------
+            Menu css
+--------------------------------*/
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.9;
+  z-index: 44;
+  visibility: hidden;
+}
+.menu.show {
+  visibility: visible;
+  z-index: 45;
+}
+.menu-branding,
+.menu-nav {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 50%;
+  float: left;
+  overflow: hidden;
+  z-index: 33;
+}
+.menu-branding {
+  background: #444;
+  transform: translate3d(0, 100%, 0);
+  -webkit-transform: translate3d(0, 100%, 0);
+  -moz-transform: translate3d(0, 100%, 0);
+  -ms-transform: translate3d(0, 100%, 0);
+  -o-transform: translate3d(0, 100%, 0);
+  transition: all 1s ease-out;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -ms-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+}
+.menu-branding.show {
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transition: all 1s ease-out;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -ms-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+}
+.menu-branding .portrait {
+  width: 250px;
+  height: 250px;
+  background: url("../img/portrait-img.jpg");
+  margin: 0 auto;
+  border: 5px solid #eece1a;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.menu-nav {
+  background: #373737;
+  margin: 0;
+  padding: 0;
+  transform: translate3d(0, -100%, 0);
+  -webkit-transform: translate3d(0, -100%, 0);
+  -moz-transform: translate3d(0, -100%, 0);
+  -ms-transform: translate3d(0, -100%, 0);
+  -o-transform: translate3d(0, -100%, 0);
+  transition: all 1s ease-out;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -ms-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+}
+.menu-nav.show {
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transition: all 1s ease-out;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -ms-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+}
+.menu .menu-item {
+  transform: translate3d(600px, 0, 0);
+  -webkit-transform: translate3d(600px, 0, 0);
+  -moz-transform: translate3d(600px, 0, 0);
+  -ms-transform: translate3d(600px, 0, 0);
+  -o-transform: translate3d(600px, 0, 0);
+  transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+}
+.menu .menu-item.show {
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+}
+.menu .nav-link {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  padding: 1rem 0;
+}
+.menu .nav-link.active {
+  color: #eece1a;
+}
+
+.menu-item:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.menu-item:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.menu-item:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.menu-item:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+/*------------------------------
+            About page css
+--------------------------------*/
+#about .about-img {
+  margin: 0 auto;
+  border: 0.1rem solid #eece1a;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+#about .single-job {
+  background: #515151;
+  border-bottom: 0.2rem solid #eece1a;
+  padding: 0.4rem;
+}
+
+/*------------------------------
+            Work page css
+--------------------------------*/
+#work .single-project .project-img {
+  width: 100%;
+  height: 350px;
+  border: 0.2rem solid #eece1a;
+  transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+}
+#work .single-project .project-img:hover {
+  opacity: 0.5;
+}
+
+/*------------------------------
+            Contact page css
+--------------------------------*/
+#contact .boxed {
+  border: 0.2rem solid #fff;
+  padding: 1.5rem 2.5rem;
+  margin-bottom: 1rem;
+  transition: all 1s ease-out;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -ms-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+}
+#contact .boxed:hover {
+  background: #eece1a;
+  color: #444;
+  padding: 0.5rem 1.5rem;
+}
+#contact .boxed:hover span {
+  color: #444;
+}
+
+/*------------------------------
+            Footer css
+--------------------------------*/
+#main-footer {
+  height: 60px;
+  text-align: center;
+  background: #2b2b2b;
+  padding: 1rem;
+  justify-content: space-evenly;
+}
+
+/*------------------------------
+            _responsive.scss
+--------------------------------*/
+@media screen and (max-width: 768px) {
+  header div.menu-branding,
+  header ul.menu-nav {
+    float: none;
+    width: 100%;
+    min-height: 0;
+  }
+  header .menu-branding {
+    height: 30vh;
+    transform: translate3d(100%, 0, 0);
+    -webkit-transform: translate3d(100%, 0, 0);
+    -moz-transform: translate3d(100%, 0, 0);
+    -ms-transform: translate3d(100%, 0, 0);
+    -o-transform: translate3d(100%, 0, 0);
+  }
+  header .menu-branding .portrait {
+    width: 150px;
+    height: 150px;
+    background-position: top;
+  }
+  header .menu-nav {
+    height: 70vh;
+    transform: translate3d(-100%, 0, 0);
+    -webkit-transform: translate3d(-100%, 0, 0);
+    -moz-transform: translate3d(-100%, 0, 0);
+    -ms-transform: translate3d(-100%, 0, 0);
+    -o-transform: translate3d(-100%, 0, 0);
+  }
+  header .menu-nav .nav-link {
+    font-size: 1rem;
+  }
+  .main .title {
+    font-size: 1.5rem;
+  }
+  .main .title-info {
+    font-size: 1rem;
+  }
+}
