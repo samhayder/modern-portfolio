@@ -339,9 +339,26 @@ main {
   }
 }
 /*------------------------------
-            Homepage css
+            Contact page css
 --------------------------------*/
+#contact {
+  .boxed {
+    border: 0.2rem solid #fff;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 1rem;
+    @include easeOut();
 
+    &:hover {
+      background: $secondaryColor;
+      color: $primaryColor;
+      padding: 0.5rem 1.5rem;
+
+      span {
+        color: $primaryColor;
+      }
+    }
+  }
+}
 /*------------------------------
             Footer css
 --------------------------------*/
@@ -350,6 +367,7 @@ main {
   text-align: center;
   background: darken($primaryColor, 10);
   padding: 1rem;
+  justify-content: space-evenly;
 }
 /*------------------------------
             _mobile.scss

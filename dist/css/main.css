@@ -261,8 +261,24 @@ main {
     opacity: 0.5; }
 
 /*------------------------------
-            Homepage css
+            Contact page css
 --------------------------------*/
+#contact .boxed {
+  border: 0.2rem solid #fff;
+  padding: 1.5rem 2.5rem;
+  margin-bottom: 1rem;
+  transition: all 1s ease-out;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -ms-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out; }
+  #contact .boxed:hover {
+    background: #eece1a;
+    color: #444;
+    padding: 0.5rem 1.5rem; }
+    #contact .boxed:hover span {
+      color: #444; }
+
 /*------------------------------
             Footer css
 --------------------------------*/
@@ -270,7 +286,8 @@ main {
   height: 60px;
   text-align: center;
   background: #2b2b2b;
-  padding: 1rem; }
+  padding: 1rem;
+  justify-content: space-evenly; }
 
 /*------------------------------
             _mobile.scss
