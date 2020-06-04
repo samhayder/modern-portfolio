@@ -131,7 +131,8 @@ header {
             Main css
 --------------------------------*/
 main {
-  h4 {
+  min-height: calc(100vh - 60px);
+  .title-info {
     background: rgba($primaryColor, 0.5);
   }
 
@@ -298,6 +299,42 @@ main {
     transition-delay: $x * 0.1s;
   }
 }
+
+/*------------------------------
+            About page css
+--------------------------------*/
+#about {
+  .about-img {
+    margin: 0 auto;
+    border: 0.1rem solid $secondaryColor;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+
+  .single-job {
+    background: lighten($primaryColor, 5);
+    border-bottom: 0.2rem solid $secondaryColor;
+    padding: 0.4rem;
+  }
+}
+
+#main-footer {
+  height: 60px;
+  text-align: center;
+  background: darken($primaryColor, 10);
+  padding: 1rem;
+}
+
+/*------------------------------
+            Homepage css
+--------------------------------*/
+
+/*------------------------------
+            Homepage css
+--------------------------------*/
 
 /*------------------------------
             Homepage css

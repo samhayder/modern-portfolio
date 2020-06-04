@@ -50,19 +50,19 @@ header ul li {
 /*------------------------------
             Main css
 --------------------------------*/
-main h4 {
-  background: rgba(68, 68, 68, 0.5); }
-
-main .social-link a {
-  color: #ffffff; }
-  main .social-link a:hover {
-    color: #eece1a; }
-
-main#home {
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center; }
+main {
+  min-height: calc(100vh - 60px); }
+  main .title-info {
+    background: rgba(68, 68, 68, 0.5); }
+  main .social-link a {
+    color: #ffffff; }
+    main .social-link a:hover {
+      color: #eece1a; }
+  main#home {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
 
 /*------------------------------
             Menu Btn css
@@ -228,6 +228,35 @@ main#home {
 .menu-item:nth-child(4) {
   transition-delay: 0.4s; }
 
+/*------------------------------
+            About page css
+--------------------------------*/
+#about .about-img {
+  margin: 0 auto;
+  border: 0.1rem solid #eece1a;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%; }
+
+#about .single-job {
+  background: #515151;
+  border-bottom: 0.2rem solid #eece1a;
+  padding: 0.4rem; }
+
+#main-footer {
+  height: 60px;
+  text-align: center;
+  background: #2b2b2b;
+  padding: 1rem; }
+
+/*------------------------------
+            Homepage css
+--------------------------------*/
+/*------------------------------
+            Homepage css
+--------------------------------*/
 /*------------------------------
             Homepage css
 --------------------------------*/
