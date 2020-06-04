@@ -15,7 +15,7 @@ body {
   height: 100vh;
   line-height: 1.5; }
   body#home-bg {
-    background: linear-gradient(to right, rgba(68, 68, 68, 0.7), rgba(68, 68, 68, 0.7)), url("../img/home_bg.jpg") center/cover fixed no-repeat; }
+    background: linear-gradient(to right, rgba(68, 68, 68, 0.7), rgba(68, 68, 68, 0.6)), url("../img/home_bg.jpg") center/cover fixed no-repeat; }
 
 a {
   text-decoration: none;
@@ -51,7 +51,7 @@ header ul li {
             Main css
 --------------------------------*/
 main h4 {
-  background: rgba(0, 0, 0, 0.2); }
+  background: rgba(68, 68, 68, 0.5); }
 
 main .social-link a {
   color: #ffffff; }
@@ -213,6 +213,8 @@ main#home {
     font-weight: 300;
     text-transform: uppercase;
     padding: 1rem 0; }
+    .menu .nav-link.active {
+      color: #eece1a; }
 
 .menu-item:nth-child(1) {
   transition-delay: 0.1s; }
@@ -230,5 +232,35 @@ main#home {
             Homepage css
 --------------------------------*/
 /*------------------------------
-            Homepage css
+            _mobile.scss
 --------------------------------*/
+@media screen and (max-width: 768px) {
+  header div.menu-branding,
+  header ul.menu-nav {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+  header .menu-branding {
+    height: 30vh;
+    transform: translate3d(100%, 0, 0);
+    -webkit-transform: translate3d(100%, 0, 0);
+    -moz-transform: translate3d(100%, 0, 0);
+    -ms-transform: translate3d(100%, 0, 0);
+    -o-transform: translate3d(100%, 0, 0); }
+    header .menu-branding .portrait {
+      width: 150px;
+      height: 150px;
+      background-position: top; }
+  header .menu-nav {
+    height: 70vh;
+    transform: translate3d(-100%, 0, 0);
+    -webkit-transform: translate3d(-100%, 0, 0);
+    -moz-transform: translate3d(-100%, 0, 0);
+    -ms-transform: translate3d(-100%, 0, 0);
+    -o-transform: translate3d(-100%, 0, 0); }
+    header .menu-nav .nav-link {
+      font-size: 1rem; }
+  .main .title {
+    font-size: 1.5rem; }
+  .main .title-info {
+    font-size: 1rem; } }

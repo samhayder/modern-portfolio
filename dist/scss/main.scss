@@ -7,17 +7,24 @@ font-family: 'Mali', cursive; */
   margin: 0;
 }
 
+//Set Text Color
+@function setTextColor($color) {
+  @if (lightness($color) > 40) {
+    @return #000000;
+  } @else {
+    @return #ffffff;
+  }
+}
 /* Template Main Color*/
-$mainGray: #444;
-$mainYellow: #eece1a;
-$mainWhite: #ffffff;
+$primaryColor: #444;
+$secondaryColor: #eece1a;
 
 $homepageBgShow: true;
 $homepageBg: url("../img/home_bg.jpg");
 $gradient: linear-gradient(
   to right,
-  rgba($mainGray, 0.7),
-  rgba($mainGray, 0.7)
+  rgba($primaryColor, 0.7),
+  rgba($primaryColor, 0.6)
 );
 
 /* Transition Effect */
@@ -69,11 +76,16 @@ $gradient: linear-gradient(
     @content;
   }
 }
+@mixin mediaXl {
+  @media screen and (min-width: 1170px) {
+    @content;
+  }
+}
 
 body {
   @include background();
-  background: $mainGray;
-  color: $mainWhite;
+  background: $primaryColor;
+  color: setTextColor($primaryColor);
   font-family: "Mali", cursive;
   height: 100vh;
   line-height: 1.5;
@@ -91,10 +103,10 @@ a {
   font-family: "Calligraffitti", cursive;
 }
 .text-white {
-  color: $mainWhite;
+  color: setTextColor($primaryColor);
 }
 .text-yellow {
-  color: $mainYellow;
+  color: $secondaryColor;
 }
 
 /*------------------------------
@@ -105,11 +117,11 @@ header {
     li {
       list-style: none;
       a {
-        color: $mainWhite;
+        color: setTextColor($primaryColor);
         text-transform: capitalize;
 
         &:hover {
-          color: $mainYellow;
+          color: $secondaryColor;
         }
       }
     }
@@ -120,15 +132,15 @@ header {
 --------------------------------*/
 main {
   h4 {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba($primaryColor, 0.5);
   }
 
   .social-link {
     a {
-      color: $mainWhite;
+      color: setTextColor($primaryColor);
 
       &:hover {
-        color: $mainYellow;
+        color: $secondaryColor;
       }
     }
   }
@@ -154,7 +166,7 @@ main {
   @include ease();
 
   .bar {
-    background: $mainWhite;
+    background: setTextColor($primaryColor);
     height: 0.2rem;
     margin: 0 0 0.5rem 0;
     z-index: 2;
@@ -222,7 +234,7 @@ main {
   }
 
   &-branding {
-    background: $mainGray;
+    background: $primaryColor;
     @include threeD(0, 100%, 0);
     @include easeOut();
 
@@ -236,7 +248,7 @@ main {
       height: 250px;
       background: url("../img/portrait-img.jpg");
       margin: 0 auto;
-      border: 5px solid $mainYellow;
+      border: 5px solid $secondaryColor;
       border-radius: 50%;
       -webkit-border-radius: 50%;
       -moz-border-radius: 50%;
@@ -246,7 +258,7 @@ main {
   }
 
   &-nav {
-    background: darken($mainGray, 5);
+    background: darken($primaryColor, 5);
     margin: 0;
     padding: 0;
     @include threeD(0, -100%, 0);
@@ -273,6 +285,10 @@ main {
     font-weight: 300;
     text-transform: uppercase;
     padding: 1rem 0;
+
+    &.active {
+      color: $secondaryColor;
+    }
   }
 }
 
@@ -288,5 +304,55 @@ main {
 --------------------------------*/
 
 /*------------------------------
-            Homepage css
+            _mobile.scss
 --------------------------------*/
+//Widescreen min-width: 1170
+@include mediaXl() {
+}
+
+//Desktop & Laptop min-width: 769px and max-width: 1170px
+@include mediaLg() {
+}
+
+//Tablets & Small Laptop max-width: 768px
+@include mediaMd() {
+  header {
+    div.menu-branding,
+    ul.menu-nav {
+      float: none;
+      width: 100%;
+      min-height: 0;
+    }
+    .menu-branding {
+      height: 30vh;
+      @include threeD(100%, 0, 0);
+
+      .portrait {
+        width: 150px;
+        height: 150px;
+        background-position: top;
+      }
+    }
+    .menu-nav {
+      height: 70vh;
+      @include threeD(-100%, 0, 0);
+
+      .nav-link {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .main {
+    .title {
+      font-size: 1.5rem;
+    }
+    .title-info {
+      font-size: 1rem;
+    }
+  }
+}
+
+//Smartphone max-width: 500px
+@include mediaSm() {
+}
