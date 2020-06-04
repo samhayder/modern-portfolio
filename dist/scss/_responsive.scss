@@ -1,0 +1,50 @@
+//Widescreen min-width: 1170
+@include mediaXl() {
+}
+
+//Desktop & Laptop min-width: 769px and max-width: 1170px
+@include mediaLg() {
+}
+
+//Tablets & Small Laptop max-width: 768px
+@include mediaMd() {
+  header {
+    div.menu-branding,
+    ul.menu-nav {
+      float: none;
+      width: 100%;
+      min-height: 0;
+    }
+    .menu-branding {
+      height: 30vh;
+      @include threeD(100%, 0, 0);
+
+      .portrait {
+        width: 150px;
+        height: 150px;
+        background-position: top;
+      }
+    }
+    .menu-nav {
+      height: 70vh;
+      @include threeD(-100%, 0, 0);
+
+      .nav-link {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .main {
+    .title {
+      font-size: 1.5rem;
+    }
+    .title-info {
+      font-size: 1rem;
+    }
+  }
+}
+
+//Smartphone max-width: 500px
+@include mediaSm() {
+}
